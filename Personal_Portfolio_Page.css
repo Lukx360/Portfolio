@@ -1,0 +1,277 @@
+:root {
+    --black: black;
+    --white: white;
+    --gray: rgb(243, 243, 243);
+    --blue: #257179;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--gray);
+    text-align: center;
+    
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+main{
+    flex-grow: 1;
+}
+#navbar {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px 0;
+    
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    margin: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+
+.nav-links a:hover {
+    text-decoration: underline orange 3px;
+    text-underline-position: under;
+    transition: underline 0.5s ease-in; 
+}
+
+section {
+    
+    padding: 50px;
+}
+
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#welcome-section h1 {
+    margin-top: 23vh;
+}
+
+#welcome-section p {
+    font-size: 25px;
+    margin: 25px 0;
+}
+
+#projects h1 {
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+#projects .projects {
+    display: grid;
+    gap: 30px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    place-items: center;
+    margin: auto;
+}
+
+#projects .project-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(196, 192, 192);
+    color: var(--white);
+    border-radius: 3px;
+    text-decoration: none;
+    box-shadow: 2px 2px 500px 2px gray;
+}
+
+#projects .project-tile img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+#projects .project-tile p {
+    font-size: 19px;
+    padding: 1px;
+}
+
+#projects .project-tile span {
+    opacity: 0;
+    padding: 0 5px;
+    
+}
+
+#projects .project-tile:hover span {
+    opacity: 1;
+    color: orangered;
+    transition: opacity 0.25s ease-in-out;
+    text-shadow: 1px 1px 10px orangered;
+}
+
+.show-all {
+    text-decoration: none;
+    color: var(--white);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: max-content;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in;
+    margin-top: 30px;
+    font-family: "Roboto", sans-serif;
+}
+
+.show-all:hover {
+    background-color: var(--black);
+    box-shadow: 0px 0px 10px gray;
+    transition: background-color 0.5s ease-in;
+}
+
+#contact h1 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#contact .social-media-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    max-width: 1000px;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+#contact .social-media {
+    display: table-column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#contact .social-media:hover {
+    transform: translateY(-15px);
+}
+
+#contact .social-media-links p {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 6px;
+}
+
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 70px;
+  }
+
+.roboto-medium {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+footer {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    border-top: 3px solid var(--white);
+    background-color: rgb(182, 182, 182);
+    color: var(--white);
+    padding: 30px;
+}
+
+@media only screen and (width < 720px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    #projects .project-tile {
+        height: 400px;
+        width: 100%;
+    }
+}
+
+/*Mobile Screen*/
+@media (max-width: 480px) {
+    #welcome-section h1 {
+        margin-top: 3vh;
+    }
+
+    .poppins-thin {
+        text-align: center;
+    }
+    
+    header {
+        display: none;
+    }
+    #projects .project-tile {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto auto;
+        
+    }
+    #contact .social-media-links {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-auto-flow: row;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    }
+    footer {
+        text-align: center;
+    }
+    * {
+        align-items: center;
+    }
+
+/*Extra small devices*/
+@media (min-width: 481px) and (max-width: 767px) {}
+
+/*Small tablets*/
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/*Large tablets & laptops*/
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/*Desktops*/
+@media (min-width: 1200px) and (max-width: 1919px) {}
+
+/*Extra large screens*/
+@media (min-width: 1920px) {}
